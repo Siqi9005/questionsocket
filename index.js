@@ -13,7 +13,7 @@ class Question extends Component {
     }
     
     componentDidMount(){
-        this.socket = mySocket("http://localhost:10000");
+        this.socket = mySocket("https://questi.herokuapp.com/");
         
         
         this.socket.on("newq", (data)=>{
