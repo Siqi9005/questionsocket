@@ -2,9 +2,7 @@ const port = process.env.PORT || 10000;
 const server= require("http").Server();
 
 var io = require("socket.io")(server);
-
 var allRooms ={};
-//kkkkkkkkk
 io.on("connection", function(socket){
     
     socket.on("joinroom", function(data){
