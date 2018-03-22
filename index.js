@@ -1,4 +1,4 @@
-const port = process.env.PORT || 10000;
+const port = process.env.PORT || 10010;
 const server= require("http").Server();
 
 var io = require("socket.io")(server);
@@ -24,9 +24,7 @@ io.on("connection", function(socket){
         //tell everybody there's a new question
         console.log(data);
         allRooms[socket.myRoom].q =data;
-        socket.to(socket.myRoom).emit("newq", data);   
-        
-        
+        socket.to(socket.myRoom).emit("newq", data);     
     });
     
     socket.on("answer", function(data){
